@@ -20,6 +20,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
+      "@components/*": ["./components/*"],
       "@stitches/config": ["./stitches.config.ts"]
     }
   },
