@@ -10,7 +10,7 @@ export default function Header() {
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-        <Text>PlacesFinder</Text>
+        <Text weight="medium">Yelpi</Text>
       </Container>
     </StyledHeader>
   );
