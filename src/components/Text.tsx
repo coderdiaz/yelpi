@@ -33,8 +33,8 @@ export default function Text({
         normal: { fontWeight: 400 },
         medium: { fontWeight: 500 },
         semibold: { fontWeight: 600 },
-        bold: { fontWeight: 700 }
-      }
+        bold: { fontWeight: 700 },
+      },
     },
     defaultVariants: {
       size: 'base',
