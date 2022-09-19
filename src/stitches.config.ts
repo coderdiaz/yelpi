@@ -41,5 +41,19 @@ export const { styled, getCssText, globalCss, css, keyframes } = createStitches(
       gray900: '#111827',
     },
   },
-  utils: {},
+  utils: {
+    mx: (value: number) => ({ marginLeft: value, marginRight: value }),
+    my: (value: number) => ({ marginTop: value, marginBottom: value }),
+    p: (value: number) => ({ padding: value }),
+    px: (value: number) => ({ paddingLeft: value, paddingRight: value }),
+    py: (value: number) => ({ paddingTop: value, paddingBottom: value }),
+    spaceY: (value: number) => ({ '> :not([hidden]) ~ :not([hidden])': {
+      marginTop: value,
+      marginBottom: 0,
+    }}),
+    spaceX: (value: number) => ({ '> :not([hidden]) ~ :not([hidden])': {
+      marginLeft: value,
+      marginRight: 0,
+    }}),
+  },
 });
