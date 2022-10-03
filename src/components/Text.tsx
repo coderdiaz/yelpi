@@ -43,7 +43,7 @@ export default function Text({
   });
 
   return createElement(
-    StyledElement, 
+    StyledElement,
     { ...props },
     children,
   );
