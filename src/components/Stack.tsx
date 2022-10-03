@@ -3,7 +3,6 @@ import type { CSS } from '@stitches/config';
 import { createElement } from 'react';
 
 type StackProps = {
-  as?: string;
   children?: React.ReactNode;
   direction?: 'column' | 'column-reverse' | 'row' | 'row-reverse';
   justify?: 'start' | 'end' | 'center' | 'stretch';
@@ -12,11 +11,10 @@ type StackProps = {
 }
 
 export default function Stack({
-  as,
   children,
   ...props
 }: StackProps) {
-  const StyledStack = styled(as as any, {
+  const StyledStack = styled('div', {
     display: 'flex',
     variants: {
       direction: {
