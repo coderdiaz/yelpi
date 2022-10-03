@@ -1,6 +1,6 @@
 import { styled } from '@stitches/config';
 import Stack from '@components/Stack';
-import StarIcon from './icons/Star';
+import StarIcon from '@components/icons/Star';
 
 type RaintingProps = {
   value?: number;
