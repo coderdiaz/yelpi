@@ -1,22 +1,23 @@
 import { styled } from '@stitches/config';
 import { Container } from '@components/Container';
-import Text from '@components/Text';
+import Logotype from '@components/Logotype';
 
 export default function Header() {
   return (
     <StyledHeader>
-      <Container size="lg" css={{
+      <Container size="xl" css={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-        <Text weight="medium">Yelpi</Text>
+        <Logotype />
       </Container>
     </StyledHeader>
   );
 }
 
 const StyledHeader = styled('header', {
-  borderBottom: '1px solid $gray200',
+  background: '$white',
+  borderBottom: '1px solid $slate300',
   py: 12,
 });
