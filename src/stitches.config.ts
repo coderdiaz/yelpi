@@ -28,17 +28,11 @@ export const { styled, getCssText, globalCss, css, keyframes } = createStitches(
       slate700: '#334155',
       slate800: '#1e293b',
       slate900: '#0f172a',
-      // Gray
-      gray50: '#f9fafb',
-      gray100: '#f3f4f6',
-      gray200: '#e5e7eb',
-      gray300: '#d1d5db',
-      gray400: '#9ca3af',
-      gray500: '#6b7280',
-      gray600: '#4b5563',
-      gray700: '#1f2937',
-      gray800: '#1f2937',
-      gray900: '#111827',
+      // Intents
+      success: '#54C693',
+      warning: '#FFB950',
+      danger: '#A04022',
+      neutral: '#64748b',
     },
     fonts: {
       sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
