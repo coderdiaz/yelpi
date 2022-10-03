@@ -5,11 +5,12 @@ export const Tag = styled('span', {
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 4,
-  fontWeight: 500,
+  fontWeight: 600,
+  textTransform: 'uppercase',
   variants: {
     size: {
-      sm: { px: 4, py: 5, fontSize: 13, lineHeight: '8px', },
-      base: { px: 6, py: 5, fontSize: 16, lineHeight: '12px', },
+      sm: { px: 4, py: 5, fontSize: 12, lineHeight: '8px' },
+      base: { px: 6, py: 5, fontSize: 15, lineHeight: '12px', },
     },
     intent: {
       success: { background: '$success', color: '$white' },
