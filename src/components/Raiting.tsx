@@ -10,7 +10,6 @@ export default function Raiting({
   value,
 }: RaintingProps) {
   const percentage = Math.round((value / 5) * 100);
-  console.log(percentage);
 
   return (
     <StyledRaiting>
