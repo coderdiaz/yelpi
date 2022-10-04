@@ -1,6 +1,8 @@
 import { styled } from '@stitches/config';
 import { Container } from '@components/Container';
 import Logotype from '@components/Logotype';
+import Stack from '@components/Stack';
+import SearchBar from '@components/SearchBar';
 
 export default function Header() {
   return (
@@ -10,7 +12,10 @@ export default function Header() {
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-        <Logotype />
+        <Stack css={{ spaceX: 12 }}>
+          <Logotype />
+          <SearchBar />
+        </Stack>
       </Container>
     </StyledHeader>
   );
