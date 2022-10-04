@@ -1,0 +1,12 @@
+overwrite: true
+schema:
+  - https://api.yelp.com/v3/graphql:
+      headers:
+        Authorization: Bearer YOUR-API-KEY
+        Accept-Language: 'en_US'
+documents: []
+generates:
+  ./src/graphql/yelp/types.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
