@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-select": "^1.0.0",
     "@stitches/react": "^1.2.8",
     "graphql": "^16.6.0",
     "next": "^12.3.0",
