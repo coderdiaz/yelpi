@@ -11,6 +11,7 @@
   "dependencies": {
     "@radix-ui/react-select": "^1.0.0",
     "@stitches/react": "^1.2.8",
+    "cookies": "^0.8.0",
     "graphql": "^16.6.0",
     "http-proxy": "^1.18.1",
     "next": "^12.3.0",
@@ -24,6 +25,7 @@
     "@graphql-codegen/near-operation-file-preset": "^2.4.1",
     "@graphql-codegen/typescript": "^2.7.3",
     "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@types/cookies": "^0.7.7",
     "@types/http-proxy": "^1.17.9",
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
