@@ -28,7 +28,7 @@ function Place({
         </PlaceImage>
         <PlaceInfo>
           <Stack direction="column" css={{ height: '100%', spaceY: 4 }}>
-            <PlaceName weight="semibold" size="lg">{name}</PlaceName>
+            <PlaceName weight="semibold">{name}</PlaceName>
             <PlaceDetails align="center" css={{ spaceX: 8 }}>
               <Tag size="sm" intent="success">Open</Tag>
               <Raiting value={rating} />
