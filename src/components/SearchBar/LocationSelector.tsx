@@ -63,6 +63,7 @@ const StyledSelectItem = styled(Select.Item, {
   px: 8,
   py: 6,
   outline: '0 none',
+  userSelect: 'none',
   '&:hover': {
     background: '$slate50',
   },
