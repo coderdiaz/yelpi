@@ -2,6 +2,7 @@ import { styled } from '@stitches/config';
 import Text from '@components/Text';
 import PlacesList from '@components/Sidebar/PlacesList';
 import useSearchBusinesses from '@gqlyelp/hooks/use-search-businesses';
+import SkeletonPlaceList from './SkeletonPlaceList';
 
 export default function Sidebar() {
   const { data } = useSearchBusinesses({
@@ -21,7 +22,9 @@ export default function Sidebar() {
           { data?.total } found places
         </Text>
       </StyledSticky>
-      <PlacesList items={data?.business ?? []} />
+      { !data
+          ? <SkeletonPlaceList />
+          : <PlacesList items={data?.business ?? []} />}
     </StyledAside>
   );
 }
