@@ -1,4 +1,4 @@
-import { keyframes, styled } from '@stitches/config';
+import { styled } from '@stitches/config';
 import SkeletonPlace from '@components/Sidebar/SkeletonPlace';
 
 export default function SkeletonPlaceList() {
