@@ -9,17 +9,17 @@ import Search from '@components/SearchBar/Search';
 export default function SearchBar() {
   return (
     <StyledStack>
-      <LocationSelector defaultValue="Mexico City">
-        <LocationSelectorItem value="CurrentLocation">
+      <LocationSelector defaultValue="cdmx">
+        <LocationSelectorItem value="based_location">
           Current Location
         </LocationSelectorItem>
-        <LocationSelectorItem value="Mexico City">
+        <LocationSelectorItem value="cdmx">
           Mexico City
         </LocationSelectorItem>
-        <LocationSelectorItem value="Monterrey">
+        <LocationSelectorItem value="mty">
           Monterrey
         </LocationSelectorItem>
-        <LocationSelectorItem value="Guadalajara">
+        <LocationSelectorItem value="gdl">
           Guadalajara
         </LocationSelectorItem>
       </LocationSelector>
