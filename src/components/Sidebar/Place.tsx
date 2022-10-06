@@ -37,11 +37,7 @@ function Place({
           </Stack>
           <Tags>
             { categories.map((category, idx) => (
-                <Tag
-                  key={idx}
-                  size="sm"
-                  intent="transparent"
-                >
+                <Tag key={idx} size="sm" intent="transparent">
                   {category.title}
                 </Tag>
               )) }
