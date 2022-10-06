@@ -38,7 +38,7 @@ const StyledSticky = styled('div', {
 const StyledAside = styled('aside', {
   pr: 32,
   borderRight: '1px solid $slate300',
-  width: 472,
+  width: 456,
   overflowY: 'scroll',
   flexShrink: 0,
   display: 'flex',
