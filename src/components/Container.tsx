@@ -4,6 +4,9 @@ export const Container = styled('div', {
   position: 'relative',
   margin: '0 auto',
   px: 4,
+  '@md': {
+    px: 12,
+  },
   variants: {
     size: {
       fluid: { width: '100%' },
