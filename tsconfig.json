@@ -21,6 +21,7 @@
     "jsx": "preserve",
     "paths": {
       "@components/*": ["./components/*"],
+      "@gqlyelp/*": ["./graphql/yelp/*"],
       "@stitches/config": ["./stitches.config.ts"]
     }
   },
