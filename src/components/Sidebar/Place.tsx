@@ -5,30 +5,46 @@ import Text from '@components/Text';
 import Stack from '@components/Stack';
 import { Tag } from '@components/Tag';
 import Raiting from '@components/Raiting';
+import { Business } from '@gqlyelp/types';
 
-function Place() {
+type PlaceProps = {} & Business;
+
+function Place({
+  name,
+  photos,
+  rating,
+  review_count,
+  categories
+}: PlaceProps) {
   return (
     <StyledPlaceItem>
       <StyledPlaceContent>
         <PlaceImage>
           <StyledImage
-            src="https://s3-media1.fl.yelpcdn.com/bphoto/7sXKhFRfP3PB06gdRF69wg/o.jpg"
-            alt="Place Image Placeholder"
+            src={photos[0]}
+            alt={name}
             fill
            />
         </PlaceImage>
         <PlaceInfo>
-          <Stack direction="column" css={{ height: '100%' }}>
-            <PlaceName weight="semibold" size="lg">Contramar</PlaceName>
+          <Stack direction="column" css={{ height: '100%', spaceY: 4 }}>
+            <PlaceName weight="semibold" size="lg">{name}</PlaceName>
             <PlaceDetails align="center" css={{ spaceX: 8 }}>
               <Tag size="sm" intent="success">Open</Tag>
-              <Raiting value={4.5} />
-              <Text size="sm" css={{ color: '$slate600' }}>20 reviews</Text>
+              <Raiting value={rating} />
+              <Text size="sm" css={{ color: '$slate600' }}>{review_count} reviews</Text>
             </PlaceDetails>
           </Stack>
           <Tags>
-            <Tag size="sm" intent="transparent">Mexican</Tag>
-            <Tag size="sm" intent="transparent">Seafood</Tag>
+            { categories.map((category, idx) => (
+                <Tag
+                  key={idx}
+                  size="sm"
+                  intent="transparent"
+                >
+                  {category.title}
+                </Tag>
+              )) }
           </Tags>
         </PlaceInfo>
       </StyledPlaceContent>
