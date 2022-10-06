@@ -13,7 +13,7 @@ export default function Raiting({
 
   return (
     <StyledRaiting>
-      <RaitingValue>{value}</RaitingValue>
+      <RaitingValue>{value.toFixed(1)}</RaitingValue>
       <RaintingStars>
         {Array.from(Array(5).keys()).map((_, idx) => (
           <StarIcon key={idx} />
