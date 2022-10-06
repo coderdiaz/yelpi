@@ -11,8 +11,7 @@ function IndexPage() {
       <Header />
       <Main>
         <StyledContainer size="xl">
-          <Sidebar></Sidebar>
-          <Divisor />
+          <Sidebar />
           <BodySection></BodySection>
         </StyledContainer>
       </Main>
@@ -26,15 +25,9 @@ const StyledContainer = styled(Container, {
   height: '100%',
 });
 
-const Divisor = styled('div', {
-  height: '100%',
-  width: 1,
-  background: '$slate300',
-});
-
 const Main = styled('main', {
-  height: 'calc(100vh - 64px)',
-  maxHeight: 'calc(100vh - 64px)',
+  height: 'calc(100vh - 66px)',
+  maxHeight: 'calc(100vh - 66px)',
 });
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
