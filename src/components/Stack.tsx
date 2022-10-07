@@ -14,6 +14,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
   ({ children, ...props }, forwardedRef) => {
     const StyledStack = styled('div', {
       display: 'flex',
+      width: 'auto',
       position: 'relative',
       variants: {
         direction: {
