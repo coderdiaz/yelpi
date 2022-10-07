@@ -3,11 +3,15 @@ import Text from '@components/Text';
 import PlacesList from '@components/Sidebar/PlacesList';
 import useSearchBusinesses from '@gqlyelp/hooks/use-search-businesses';
 import SkeletonPlaceList from './SkeletonPlaceList';
+import useUi from '@hooks/use-ui';
+import { locationSelector } from '@hooks/use-ui/selectors';
 
 export default function Sidebar() {
+  const { latitude, longitude } = useUi(locationSelector);
+
   const { data } = useSearchBusinesses({
-    latitude: 19.44216,
-    longitude: -99.156579,
+    latitude,
+    longitude,
   });
 
   return (
