@@ -14,6 +14,7 @@ export const Container = styled('div', {
       md: { maxWidth: 768 },
       lg: { maxWidth: 1024 },
       xl: { maxWidth: 1280 },
+      '2xl': { maxWidth: 1536 },
     },
   },
   defaultVariants: {
