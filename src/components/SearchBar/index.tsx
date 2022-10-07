@@ -5,11 +5,34 @@ import {
   LocationSelectorItem,
 } from '@components/SearchBar/LocationSelector';
 import Search from '@components/SearchBar/Search';
+import useUi from '@hooks/use-ui';
+import {
+  currentCitySelector,
+  setCurrentCitySelector,
+  setLocationSelector,
+} from '@hooks/use-ui/selectors';
+import { config } from '@util/config';
 
 export default function SearchBar() {
+  const currentCity = useUi(currentCitySelector);
+  const setCurrentCity = useUi(setCurrentCitySelector);
+  const setLocation = useUi(setLocationSelector);
+
+  const handleLocationChange = (value: 'based_location' | 'cdmx' | 'mty' | 'gdl') => {
+    setCurrentCity(value);
+
+    if (value === 'based_location') {
+      // Handle logic to get location values using Geolocation API
+      setLocation(config.cities['cdmx']);
+      return;
+    }
+
+    setLocation(config.cities[value]);
+  }
+
   return (
     <StyledStack>
-      <LocationSelector defaultValue="cdmx">
+      <LocationSelector defaultValue={currentCity} onValueChange={handleLocationChange}>
         <LocationSelectorItem value="based_location">
           Current Location
         </LocationSelectorItem>
