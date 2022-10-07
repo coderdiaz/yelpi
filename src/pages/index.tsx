@@ -3,8 +3,7 @@ import { styled } from '@stitches/config';
 import Header from '@components/Header';
 import { Container } from '@components/Container';
 import Sidebar from '@components/Sidebar';
-import BodySection from '@components/BodySection';
-import QuickStart from '@components/Body/QuickStart';
+import QuickStart from '@components/blocks/QuickStart';
 
 function IndexPage() {
   return (
