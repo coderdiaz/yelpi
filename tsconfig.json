@@ -23,6 +23,8 @@
       "@components/*": ["./components/*"],
       "@images/*": ["./assets/images/*"],
       "@svg/*": ["./assets/svg/*"],
+      "@util/*": ["./utils/*"],
+      "@hooks/*": ["./hooks/*"],
       "@gqlyelp/*": ["./graphql/yelp/*"],
       "@stitches/config": ["./stitches.config.ts"]
     }
