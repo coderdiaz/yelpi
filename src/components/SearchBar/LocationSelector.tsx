@@ -49,6 +49,7 @@ const StyledTrigger = styled(Select.Trigger, {
   all: 'unset',
   px: 12,
   py: 8,
+  width: 'max-content',
 });
 
 const StyledContent = styled(Select.Content, {
