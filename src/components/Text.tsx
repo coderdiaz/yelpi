@@ -3,7 +3,7 @@ import { styled } from '@stitches/config';
 import type { CSS } from '@stitches/config';
 
 type TextProps = {
-  as?: 'p' | 'span';
+  as?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   size?: 'sm' | 'base' | 'lg' | 'xl';
   weight?: 'normal' | 'medium' | 'semibold' | 'bold',
   children?: React.ReactNode;
