@@ -19,6 +19,5 @@ const globalStyles = globalCss({
     background: '$slate100',
     '-webkit-font-smoothing': 'antialiased',
     '-moz-osx-font-smoothing': 'grayscale',
-    overflow: 'hidden',
   }
 });
