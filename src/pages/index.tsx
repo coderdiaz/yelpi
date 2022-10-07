@@ -4,6 +4,7 @@ import Header from '@components/Header';
 import { Container } from '@components/Container';
 import Sidebar from '@components/Sidebar';
 import BodySection from '@components/BodySection';
+import QuickStart from '@components/Body/QuickStart';
 
 function IndexPage() {
   return (
@@ -12,7 +13,9 @@ function IndexPage() {
       <Main>
         <StyledContainer size="xl">
           <Sidebar />
-          <BodySection></BodySection>
+          <StyledBodySection>
+            <QuickStart />
+          </StyledBodySection>
         </StyledContainer>
       </Main>
     </>
@@ -28,6 +31,10 @@ const StyledContainer = styled(Container, {
 const Main = styled('main', {
   height: 'calc(100vh - 66px)',
   maxHeight: 'calc(100vh - 66px)',
+});
+
+const StyledBodySection = styled('section', {
+  width: '100%',
 });
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
