@@ -58,13 +58,15 @@ const StyledContent = styled(Select.Content, {
   background: '$white',
   borderRadius: 8,
   border: '1px solid $slate300',
+  overflow: 'hidden',
 });
 
 const StyledSelectItem = styled(Select.Item, {
-  px: 8,
-  py: 6,
+  px: 12,
+  py: 8,
   outline: '0 none',
   userSelect: 'none',
+  fontWeight: 500,
   '&:hover': {
     background: '$slate50',
   },

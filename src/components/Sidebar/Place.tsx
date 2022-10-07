@@ -56,9 +56,10 @@ const StyledPlaceContent = styled('div', {
   display: 'flex',
   spaceX: 12,
   background: '$white',
-  p: 12,
+  p: 9,
   border: '1px solid $slate300',
   borderRadius: 12,
+  overflow: 'hidden',
 });
 
 const PlaceImage = styled('div', {

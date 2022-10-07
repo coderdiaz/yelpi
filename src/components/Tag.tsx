@@ -7,10 +7,10 @@ export const Tag = styled('span', {
   borderRadius: 4,
   fontWeight: 600,
   textTransform: 'uppercase',
-  letterSpacing: 0.35,
+  letterSpacing: 0.30,
   variants: {
     size: {
-      xs: { px: 2, py: 4, fontSize: 11, lineHeight: '7px' },
+      xs: { px: 3, py: 4, fontSize: 11, lineHeight: '7px' },
       sm: { px: 4, py: 5, fontSize: 12, lineHeight: '8px' },
       base: { px: 6, py: 5, fontSize: 15, lineHeight: '12px', },
     },
