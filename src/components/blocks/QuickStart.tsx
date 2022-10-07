@@ -117,7 +117,7 @@ const ImageWrapper = styled('a', {
   cursor: 'pointer',
   borderRadius: 12,
   overflow: 'hidden',
-  height: 320,
+  height: 340,
   width: '100%',
   '&:before': {
     content: '',
