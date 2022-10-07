@@ -12,18 +12,22 @@ import {
   setLocationSelector,
 } from '@hooks/use-ui/selectors';
 import { config } from '@util/config';
+import useLocation from '@hooks/use-location';
 
 export default function SearchBar() {
+  const { getLocation } = useLocation();
   const currentCity = useUi(currentCitySelector);
   const setCurrentCity = useUi(setCurrentCitySelector);
   const setLocation = useUi(setLocationSelector);
 
-  const handleLocationChange = (value: 'based_location' | 'cdmx' | 'mty' | 'gdl') => {
+  const handleLocationChange = async (value: 'based_location' | 'cdmx' | 'mty' | 'gdl') => {
     setCurrentCity(value);
 
     if (value === 'based_location') {
       // Handle logic to get location values using Geolocation API
-      setLocation(config.cities['cdmx']);
+      const values = await getLocation();
+      setLocation(values);
+
       return;
     }
 
