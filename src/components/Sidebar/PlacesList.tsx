@@ -1,6 +1,8 @@
 import { styled } from '@stitches/config';
 import Place from '@components/Sidebar/Place';
 import { Business } from '@gqlyelp/types';
+import useUi from '@hooks/use-ui';
+import { setSelectedPlaceSelector } from '@hooks/use-ui/selectors';
 
 type PlacesListProps = {
   items?: Business[];
@@ -9,11 +11,16 @@ type PlacesListProps = {
 export default function PlacesList({
   items = [],
 }: PlacesListProps) {
+  const handleSelectId = useUi(setSelectedPlaceSelector);
+
   return (
     <StyledPlacesNav>
       <StyledPlacesList>
         { items.map((item, idx) => (
-            <Place {...item} key={idx} />
+            <Place
+              {...item}
+              key={idx}
+              onClick={() => handleSelectId(item.id)} />
           )) }
       </StyledPlacesList>
     </StyledPlacesNav>
