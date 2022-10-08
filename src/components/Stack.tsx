@@ -5,7 +5,7 @@ import type { CSS } from '@stitches/config';
 type StackProps = {
   children?: React.ReactNode;
   direction?: 'column' | 'column-reverse' | 'row' | 'row-reverse';
-  justify?: 'start' | 'end' | 'center' | 'stretch';
+  justify?: 'start' | 'end' | 'center' | 'stretch' | 'between';
   align?: 'start' | 'end' | 'center' | 'stretch' | 'baseline';
   css?: CSS;
 }
@@ -28,6 +28,7 @@ const Stack = forwardRef<HTMLDivElement, StackProps>(
           end: { justifyContent: 'end' },
           center: { justifyContent: 'center' },
           stretch: { justifyContent: 'stretch' },
+          between: { justifyContent: 'space-between' },
         },
         align: {
           start: { alignItems: 'start' },
