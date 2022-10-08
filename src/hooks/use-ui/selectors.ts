@@ -8,3 +8,6 @@ export const setSearchValueSelector = (state: IUiState) => state.setSearch;
 
 export const locationSelector = (state: IUiState) => state.location;
 export const setLocationSelector = (state: IUiState) => state.setLocation;
+
+export const selectedPlaceSelector = (state: IUiState) => state.selectedPlace;
+export const setSelectedPlaceSelector = (state: IUiState) => state.setSelectedPlace;

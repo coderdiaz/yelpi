@@ -5,6 +5,7 @@ import { IUiState } from './types';
 const useUi = create<IUiState>((set) => ({
   search: '',
   currentCity: 'cdmx',
+  selectedPlace: null,
   location: {
     latitude: 19.44216,
     longitude: -99.156579,
@@ -13,6 +14,7 @@ const useUi = create<IUiState>((set) => ({
     set(() => ({ currentCity })),
   setSearch: (value: string) => set(() => ({ search: value })),
   setLocation: (location: LatLng) => set(() => ({ location })),
+  setSelectedPlace: (id: string) => set(() => ({ selectedPlace: id }))
 }));
 
 export default useUi;
