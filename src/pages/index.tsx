@@ -4,8 +4,13 @@ import Header from '@components/Header';
 import { Container } from '@components/Container';
 import Sidebar from '@components/Sidebar';
 import QuickStart from '@components/blocks/QuickStart';
+import useUi from '@hooks/use-ui';
+import { selectedPlaceSelector } from '@hooks/use-ui/selectors';
+import Business from '@components/blocks/Business';
 
 function IndexPage() {
+  const selectedId = useUi(selectedPlaceSelector);
+
   return (
     <>
       <Header />
@@ -13,7 +18,9 @@ function IndexPage() {
         <StyledContainer size="xl">
           <Sidebar />
           <StyledBodySection>
-            <QuickStart />
+            { selectedId
+                ? <Business />
+                : <QuickStart /> }
           </StyledBodySection>
         </StyledContainer>
       </Main>
