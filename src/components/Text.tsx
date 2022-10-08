@@ -4,7 +4,7 @@ import type { CSS } from '@stitches/config';
 
 type TextProps = {
   as?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  size?: 'sm' | 'base' | 'lg' | 'xl';
+  size?: 'sm' | 'base' | 'lg' | 'xl' | '2xl';
   weight?: 'normal' | 'medium' | 'semibold' | 'bold',
   children?: React.ReactNode;
   css?: CSS;
@@ -28,6 +28,7 @@ export default function Text({
         base: { fontSize: 16 },
         lg: { fontSize: 18 },
         xl: { fontSize: 20 },
+        '2xl': { fontSize: 24 }
       },
       weight: {
         normal: { fontWeight: 400 },
