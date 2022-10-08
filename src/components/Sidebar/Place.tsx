@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, SyntheticEvent } from 'react';
 import Image from 'next/future/image';
 import { styled } from '@stitches/config';
 import Text from '@components/Text';
@@ -7,18 +7,21 @@ import { Tag } from '@components/Tag';
 import Raiting from '@components/Raiting';
 import { Business } from '@gqlyelp/types';
 
-type PlaceProps = {} & Business;
+type PlaceProps = {
+  onClick?: (e: SyntheticEvent) => void;
+} & Business;
 
 function Place({
   name,
   photos,
   rating,
   review_count,
-  categories
+  categories,
+  onClick,
 }: PlaceProps) {
   return (
     <StyledPlaceItem>
-      <StyledPlaceContent>
+      <StyledPlaceContent onClick={onClick}>
         <PlaceImage>
           <StyledImage
             src={photos[0]}
@@ -52,7 +55,9 @@ const StyledPlaceItem = styled('li', {
   position: 'relative',
 });
 
-const StyledPlaceContent = styled('div', {
+const StyledPlaceContent = styled('button', {
+  width: '100%',
+  cursor: 'pointer',
   display: 'flex',
   spaceX: 12,
   background: '$white',
