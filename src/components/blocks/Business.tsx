@@ -6,12 +6,14 @@ import { Tag } from '@components/Tag';
 import Raiting from '@components/Raiting';
 import EmbedMap from '@components/EmbedMap';
 import useUi from '@hooks/use-ui';
-import { locationSelector } from '@hooks/use-ui/selectors';
+import { selectedPlaceSelector } from '@hooks/use-ui/selectors';
 import Review from '@components/Review';
 import PhoneIcon from '@svg/phone.svg';
+import useGetBusiness from '@gqlyelp/hooks/use-get-business';
 
 export default function Business() {
-  const location = useUi(locationSelector);
+  const id = useUi(selectedPlaceSelector);
+  const { data } = useGetBusiness({ id });
 
   return (
     <StyledWrapper>
@@ -19,22 +21,22 @@ export default function Business() {
         <Stack css={{ zIndex: 10, spaceX: 32, px: 48, pt: 84, pb: 32 }}>
           <ImageWrapper>
             <AvatarImage
-              src="https://s3-media1.fl.yelpcdn.com/bphoto/LTCs-0feaMWsdyO7uxyxlA/o.jpg"
-              alt=""
+              src={data.photos[0]}
+              alt={data.name}
               fill />
           </ImageWrapper>
           <Stack align="center" justify="between" css={{ width: '100%' }}>
             <Heading direction="column">
               <PlaceName size="2xl" weight="semibold" css={{ color: '$white' }}>
-                Contramar
+                {data.name}
               </PlaceName>
               <PlaceDetails align="center" css={{ spaceX: 8 }}>
                 <Tag size="sm" intent="success">Open</Tag>
-                <Raiting value={4.5} dark />
-                <Text size="sm" css={{ color: '$white' }}>120 reviews</Text>
+                <Raiting value={data.rating} dark />
+                <Text size="sm" css={{ color: '$white' }}>{data.review_count} reviews</Text>
               </PlaceDetails>
             </Heading>
-            <PhoneNumber href="#">
+            <PhoneNumber href={data.phone}>
               <Image src={PhoneIcon} alt="Direction" />
               <Text weight="medium">To Call</Text>
             </PhoneNumber>
@@ -55,21 +57,21 @@ export default function Business() {
                 </Text>
                 <StyledAddress
                   dangerouslySetInnerHTML={{
-                    __html: `Pedro Baranda 17\nCol. Centro\n06030 México, D.F.\nMexico`
+                    __html: data.location.formatted_address,
                   }}
                 />
               </Stack>
               <EmbedMap
-                lat={location.latitude}
-                lng={location.longitude} />
+                lat={data.coordinates.latitude}
+                lng={data.coordinates.longitude} />
             </Stack>
             <Stack direction="column" css={{ width: '100%', spaceY: 16 }}>
               <Text as="span" size="lg" weight="semibold">
                 Reviews
               </Text>
               <Stack direction="column" css={{ spaceY: 24 }}>
-                { Array.from(Array(6).keys()).map((_, idx) => (
-                  <Review key={idx} />
+                { data.reviews.map((review, idx) => (
+                  <Review {...review} key={idx} />
                 ))}
               </Stack>
             </Stack>
@@ -95,7 +97,7 @@ const StyledWrapper = styled('div', {
 
 const CoverWrapper = styled('div', {
   position: 'relative',
-  overflow: 'hidden',
+  overflowX: 'hidden',
 });
 
 const ImageWrapper = styled('div', {
@@ -121,10 +123,10 @@ const PlaceDetails = styled(Stack, {});
 
 const CoverImageWrapper = styled('div', {
   position: 'absolute',
-  top: 0,
+  top: -60,
   left: -48,
   width: 'calc(100% + 48px)',
-  height: 200,
+  height: 260,
   zIndex: -1,
   overflow: 'hidden',
   '&:before': {
