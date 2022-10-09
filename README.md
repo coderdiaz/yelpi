@@ -1,5 +1,7 @@
 ## Yelpi
-A website built on `NextJS` to show business from Yelp via GraphQL based on terms and location.
+A website built on `NextJS` to search business from Yelp via GraphQL based on terms and location.
+
+![Yelp](./cover.jpeg)
 
 ### Getting Started
 To get a local copy up and running, please follow these simple steps.
@@ -10,7 +12,7 @@ Here is what you need to be able to run the web.
 - Yarn (recommended).
 - A free account in Yelp with Developer Beta enabled.
 
-#### Crafted with
+#### Crafted with:
 - [Next.js](https://nextjs.org/).
 - [React](https://reactjs.org/).
 - [Stitches](https://stitches.dev/).
