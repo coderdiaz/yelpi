@@ -26,7 +26,8 @@
       "@util/*": ["./utils/*"],
       "@hooks/*": ["./hooks/*"],
       "@gqlyelp/*": ["./graphql/yelp/*"],
-      "@stitches/config": ["./stitches.config.ts"]
+      "@skeletons/*": ["./skeletons/*"],
+      "@stitches/config": ["./stitches.config.ts"],
     }
   },
   "include": [
