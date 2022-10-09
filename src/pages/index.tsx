@@ -45,6 +45,10 @@ const Main = styled('main', {
 
 const StyledBodySection = styled('section', {
   width: '100%',
+  display: 'none',
+  '@lg': {
+    display: 'block',
+  },
 });
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {

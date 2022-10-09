@@ -3,7 +3,7 @@ import { styled } from '@stitches/config';
 export const Container = styled('div', {
   position: 'relative',
   margin: '0 auto',
-  px: 4,
+  px: 12,
   '@md': {
     px: 12,
   },

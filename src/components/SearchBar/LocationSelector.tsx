@@ -17,8 +17,8 @@ export const LocationSelector = forwardRef<any, Select.SelectProps>(
               <Text weight="medium">
                 <Select.Value />
               </Text>
-              <SelectorIcon />
             </Stack>
+            <SelectorIcon size={18} css={{ marginLeft: 8 }} />
           </StyledTrigger>
           <Select.Portal>
             <StyledContent>
@@ -43,13 +43,31 @@ export const LocationSelectorItem = forwardRef<any, Select.SelectItemProps>(
 
 const StyledLocationWrapper = styled('div', {
   position: 'relative',
+  flexShrink: 0,
+  width: '100%',
+  '@md': {
+    width: 'max-content',
+  },
 });
 
 const StyledTrigger = styled(Select.Trigger, {
-  all: 'unset',
-  px: 12,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  px: 8,
   py: 8,
-  width: 'max-content',
+  flexShrink: 0,
+  width: '100%',
+  border: 0,
+  background: '$white',
+  '&:focus': {
+    outline: '0 none',
+  },
+  '@md': {
+    pl: 12,
+    pr: 4,
+    width: 'auto',
+  },
 });
 
 const StyledContent = styled(Select.Content, {

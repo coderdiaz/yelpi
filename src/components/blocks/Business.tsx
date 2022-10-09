@@ -160,7 +160,6 @@ const StyledAddress = styled('div', {
 });
 
 const PhoneNumber = styled('a', {
-  display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   background: '$slate50',
@@ -170,4 +169,8 @@ const PhoneNumber = styled('a', {
   spaceX: 4,
   textDecoration: 'none',
   color: '$slate900',
+  display: 'none',
+  '@xl': {
+    display: 'flex',
+  },
 });

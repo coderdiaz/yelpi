@@ -40,7 +40,15 @@ function Place({
             <PlaceDetails align="center" css={{ spaceX: 8 }}>
               <Tag size="sm" intent="success">Open</Tag>
               <Raiting value={rating} />
-              <Text size="sm" css={{ color: '$slate600' }}>{review_count} reviews</Text>
+              <Text size="sm" css={{
+                color: '$slate600',
+                display: 'none',
+                '@md': {
+                  display: 'block',
+                },
+              }}>
+                {review_count} reviews
+              </Text>
             </PlaceDetails>
           </Stack>
           <Tags>

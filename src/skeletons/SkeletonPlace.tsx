@@ -13,7 +13,13 @@ function SkeletonPlace() {
             <PlaceDetails align="center" css={{ spaceX: 8 }}>
               <SkeletonLoader css={{ width: 48 }} />
               <SkeletonLoader css={{ width: 96 }} />
-              <SkeletonLoader css={{ width: 32 }} />
+              <SkeletonLoader css={{
+                width: 32,
+                display: 'none',
+                '@md': {
+                  display: 'block',
+                },
+              }} />
             </PlaceDetails>
           </Stack>
           <Tags>

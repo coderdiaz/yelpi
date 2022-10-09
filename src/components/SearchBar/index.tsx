@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '@stitches/config';
 import Stack from '@components/Stack';
 import {
   LocationSelector,
@@ -64,6 +64,7 @@ const StyledStack = styled(Stack, {
   borderRadius: 9999,
   overflow: 'hidden',
   height: '100%',
+  width: '100%',
   spaceX: 8,
 });
 
@@ -71,4 +72,8 @@ const Separator = styled('div', {
   height: 40,
   width: 1,
   background: '$slate300',
+  display: 'none',
+  '@md': {
+    display: 'block',
+  },
 })

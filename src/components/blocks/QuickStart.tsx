@@ -11,23 +11,43 @@ import Fishing from '@svg/fishing.svg';
 import Burgers from '@svg/burgers.svg';
 import Pizza from '@svg/pizza.svg';
 import Bbq from '@svg/bbq.svg';
+import useUi from '@hooks/use-ui';
+import {
+  setCurrentCitySelector,
+  setLocationSelector,
+} from '@hooks/use-ui/selectors';
+import { config } from '@util/config';
 
 export default function QuickStart() {
+  const changeCurrentCity = useUi(setCurrentCitySelector);
+  const changeLocation = useUi(setLocationSelector);
+
+  const handleCityChange = (city: 'cdmx' | 'mty' | 'gdl') => {
+    changeCurrentCity(city);
+    changeLocation(config.cities[city]);
+  }
+
   return (
     <StyledWrapper>
       <Stack direction="column" css={{ spaceY: 24}}>
         <Stack direction="column" css={{ spaceY: 16, width: '100%' }}>
           <Text as="h2" weight="semibold" size="xl">Explore other cities</Text>
           <StyledCities>
-            <ImageWrapper>
+            <ImageWrapper
+              onClick={() => handleCityChange('cdmx')}
+            >
               <StyledImage src={CdmxImage} alt="Visit Mexico City, Mexico" fill />
               <StyledCityName weight="semibold" size="lg">Mexico City</StyledCityName>
             </ImageWrapper>
-            <ImageWrapper>
+            <ImageWrapper
+              onClick={() => handleCityChange('mty')}
+            >
               <StyledImage src={MtyImage} alt="Visit Monterrey, Mexico" fill />
               <StyledCityName weight="semibold" size="lg">Monterrey</StyledCityName>
             </ImageWrapper>
-            <ImageWrapper>
+            <ImageWrapper
+              onClick={() => handleCityChange('gdl')}
+            >
               <StyledImage src={GdlImage} alt="Visit Guadalajara, Mexico" fill />
               <StyledCityName weight="semibold" size="lg">Guadalajara</StyledCityName>
             </ImageWrapper>
@@ -112,16 +132,21 @@ const StyledWrapper = styled('div', {
   flexDirection: 'column',
 });
 
-const ImageWrapper = styled('a', {
+const ImageWrapper = styled('button', {
   position: 'relative',
   cursor: 'pointer',
   borderRadius: 12,
   overflow: 'hidden',
   height: 340,
   width: '100%',
+  border: 0,
+  '&:focus': {
+    outline: '0 none',
+  },
   '&:before': {
     content: '',
     position: 'absolute',
+    left: 0,
     bottom: 0,
     width: '100%',
     height: '100%',

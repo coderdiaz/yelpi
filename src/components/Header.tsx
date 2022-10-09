@@ -12,11 +12,23 @@ export default function Header() {
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-        <Stack css={{ spaceX: 12 }}>
+        <Stack css={{
+          spaceX: 12,
+          width: '100%',
+          '@lg': {
+            width: 680,
+          }
+        }}>
           <Logotype />
           <SearchBar />
         </Stack>
-        <Stack align="center" css={{ spaceX: 24 }}>
+        <Stack align="center" css={{
+          spaceX: 24,
+          display: 'none',
+          '@lg': {
+            display: 'flex',
+          },
+        }}>
           <Link>For business</Link>
           <Stack align="center" css={{ spaceX: 8 }}>
             <Button>Sign In</Button>
@@ -35,8 +47,11 @@ const StyledHeader = styled('header', {
 });
 
 const Link = styled('a', {
-  display: 'inline',
   fontWeight: 500,
+  display: 'none',
+  '@xl': {
+    display: 'inline',
+  }
 });
 
 const Button = styled('button', {

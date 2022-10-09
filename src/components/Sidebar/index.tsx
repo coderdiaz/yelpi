@@ -20,7 +20,7 @@ export default function Sidebar() {
   return (
     <StyledAside>
       <StyledSticky>
-        <Text
+      <Text
           weight="semibold"
           css={{ color: '$slate700' }}
         >
@@ -36,19 +36,26 @@ const StyledSticky = styled('div', {
   position: 'sticky',
   top: 0,
   width: 'calc(100% + 5px)',
-  pt: 32,
-  pb: 28,
+  pt: 16,
+  pb: 20,
   zIndex: 999,
   background: 'linear-gradient($slate100, $slate100 50%, $slate100 75%, transparent)',
+  '@md': {
+    pt: 32,
+    pb: 28,
+  }
 });
 
 const StyledAside = styled('aside', {
-  pr: 32,
-  pl: 4,
-  borderRight: '1px solid $slate300',
-  width: 448,
   overflowY: 'scroll',
   flexShrink: 0,
   display: 'flex',
   flexDirection: 'column',
+  width: '100%',
+  '@lg': {
+    width: 448,
+    pr: 32,
+    pl: 4,
+    borderRight: '1px solid $slate300',
+  },
 });

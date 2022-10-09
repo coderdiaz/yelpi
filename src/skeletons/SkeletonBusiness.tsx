@@ -147,12 +147,7 @@ const DetailInfo = styled('div', {
   pb: 48,
 });
 
-const StyledAddress = styled('div', {
-  lineHeight: '24px',
-});
-
 const PhoneNumber = styled('div', {
-  display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   background: '$slate200',
@@ -163,4 +158,8 @@ const PhoneNumber = styled('div', {
   borderRadius: 12,
   spaceX: 4,
   textDecoration: 'none',
+  display: 'none',
+  '@xl': {
+    display: 'flex',
+  },
 });
