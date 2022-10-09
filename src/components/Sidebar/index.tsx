@@ -2,33 +2,32 @@ import { styled } from '@stitches/config';
 import Text from '@components/Text';
 import PlacesList from '@components/Sidebar/PlacesList';
 import useSearchBusinesses from '@gqlyelp/hooks/use-search-businesses';
-import SkeletonPlaceList from './SkeletonPlaceList';
 import useUi from '@hooks/use-ui';
 import { locationSelector } from '@hooks/use-ui/selectors';
+import SkeletonSidebar from 'skeletons/SkeletonSidebar';
 
 export default function Sidebar() {
   const { latitude, longitude } = useUi(locationSelector);
-
   const { data } = useSearchBusinesses({
     latitude,
     longitude,
   });
+
+  if (!data) {
+    return <SkeletonSidebar />;
+  }
 
   return (
     <StyledAside>
       <StyledSticky>
         <Text
           weight="semibold"
-          css={{
-            color: '$slate700',
-          }}
+          css={{ color: '$slate700' }}
         >
           { data?.total } found places
         </Text>
       </StyledSticky>
-      { !data
-          ? <SkeletonPlaceList />
-          : <PlacesList items={data?.business ?? []} />}
+      <PlacesList items={data?.business ?? []} />
     </StyledAside>
   );
 }
