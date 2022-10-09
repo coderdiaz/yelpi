@@ -22,7 +22,7 @@ const StyledSticky = styled('div', {
   position: 'sticky',
   top: 0,
   pt: 32,
-  pb: 32,
+  pb: 28,
   zIndex: 999,
   width: '100%',
   background: 'linear-gradient($slate100, $slate100 50%, $slate100 75%, transparent)',
@@ -32,8 +32,9 @@ const StyledSticky = styled('div', {
 
 const StyledAside = styled('aside', {
   pr: 32,
+  pl: 4,
   borderRight: '1px solid $slate300',
-  width: 428,
+  width: 448,
   overflowY: 'scroll',
   flexShrink: 0,
   display: 'flex',

@@ -36,5 +36,5 @@ const StyledPlacesList = styled('ul', {
   display: 'flex',
   flexDirection: 'column',
   listStyle: 'none',
-  spaceY: 16,
+  spaceY: 12,
 });
