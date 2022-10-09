@@ -10,6 +10,7 @@ import { selectedPlaceSelector } from '@hooks/use-ui/selectors';
 import Review from '@components/Review';
 import PhoneIcon from '@svg/phone.svg';
 import useGetBusiness from '@gqlyelp/hooks/use-get-business';
+import PlaceholderAvatar from '@images/placeholder-avatar.png';
 
 export default function Business() {
   const id = useUi(selectedPlaceSelector);
@@ -21,7 +22,7 @@ export default function Business() {
         <Stack css={{ zIndex: 10, spaceX: 32, px: 48, pt: 84, pb: 32 }}>
           <ImageWrapper>
             <AvatarImage
-              src={data.photos[0]}
+              src={data.photos[0] ?? PlaceholderAvatar}
               alt={data.name}
               fill />
           </ImageWrapper>
