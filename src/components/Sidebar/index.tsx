@@ -35,6 +35,7 @@ export default function Sidebar() {
 const StyledSticky = styled('div', {
   position: 'sticky',
   top: 0,
+  width: 'calc(100% + 5px)',
   pt: 32,
   pb: 28,
   zIndex: 999,
@@ -45,7 +46,7 @@ const StyledAside = styled('aside', {
   pr: 32,
   pl: 4,
   borderRight: '1px solid $slate300',
-  width: 428,
+  width: 448,
   overflowY: 'scroll',
   flexShrink: 0,
   display: 'flex',
