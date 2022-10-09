@@ -4,6 +4,7 @@ import Stack from '@components/Stack';
 import Text from '@components/Text';
 import Raiting from '@components/Raiting';
 import type { Review as ReviewType } from '@gqlyelp/types';
+import PlaceholderAvatar from '@images/placeholder-avatar.png';
 
 export default function Review({
   user,
@@ -15,7 +16,7 @@ export default function Review({
       <Stack align="center" css={{ spaceX: 8 }}>
         <ImageWrapper>
           <Avatar
-            src={user.image_url}
+            src={user.image_url ?? PlaceholderAvatar}
             alt={`Avatar of ${user.name}`}
             fill
           />
