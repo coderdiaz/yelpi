@@ -1,5 +1,5 @@
 import { styled } from '@stitches/config';
-import SkeletonPlace from '@components/Sidebar/SkeletonPlace';
+import SkeletonPlace from '@skeletons/SkeletonPlace';
 
 export default function SkeletonPlaceList() {
   return (
