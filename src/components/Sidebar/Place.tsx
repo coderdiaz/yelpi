@@ -6,12 +6,15 @@ import Stack from '@components/Stack';
 import { Tag } from '@components/Tag';
 import Raiting from '@components/Raiting';
 import { Business } from '@gqlyelp/types';
+import useUi from '@hooks/use-ui';
+import { selectedPlaceSelector } from '@hooks/use-ui/selectors';
 
 type PlaceProps = {
   onClick?: (e: SyntheticEvent) => void;
 } & Business;
 
 function Place({
+  id,
   name,
   photos,
   rating,
@@ -19,9 +22,11 @@ function Place({
   categories,
   onClick,
 }: PlaceProps) {
+  const selectedId = useUi(selectedPlaceSelector);
+
   return (
     <StyledPlaceItem>
-      <StyledPlaceContent onClick={onClick}>
+      <StyledPlaceContent active={id === selectedId} onClick={onClick}>
         <PlaceImage>
           <StyledImage
             src={photos[0]}
@@ -56,15 +61,28 @@ const StyledPlaceItem = styled('li', {
 });
 
 const StyledPlaceContent = styled('button', {
-  width: '100%',
+  all: 'unset',
+  outline: '0 none',
+  width: 'calc(100% - 18px)',
   cursor: 'pointer',
   display: 'flex',
   spaceX: 12,
   background: '$white',
   p: 9,
-  border: '1px solid $slate300',
   borderRadius: 12,
   overflow: 'hidden',
+  '&:focus': {
+    outline: '0 none',
+  },
+  variants: {
+    active: {
+      true: { boxShadow: '$ringEnabled' },
+      false: { boxShadow: '$ring' },
+    },
+  },
+  defaultVariants: {
+    active: 'false',
+  },
 });
 
 const PlaceImage = styled('div', {

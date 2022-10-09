@@ -15,7 +15,7 @@ export default function SkeletonPlaceList() {
 
 const StyledPlacesNav = styled('nav', {
   pb: 32,
-  marginTop: -12,
+  marginTop: -8,
 });
 
 const StyledPlacesList = styled('ul', {

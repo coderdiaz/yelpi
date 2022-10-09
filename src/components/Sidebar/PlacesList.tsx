@@ -29,12 +29,12 @@ export default function PlacesList({
 
 const StyledPlacesNav = styled('nav', {
   pb: 32,
-  marginTop: -12,
+  marginTop: -8,
 });
 
 const StyledPlacesList = styled('ul', {
   display: 'flex',
   flexDirection: 'column',
   listStyle: 'none',
-  spaceY: 12,
+  spaceY: 16,
 });

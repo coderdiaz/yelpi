@@ -49,7 +49,7 @@ const Button = styled('button', {
   fontSize: 16,
   variants: {
     intent: {
-      primary: { background: '$slate800', borderColor: '$slate800', color: '$white' },
+      primary: { background: '$orange600', borderColor: '$orange600', color: '$orange50' },
       secondary: { background: '$white', borderColor: '$slate400' },
     },
   },

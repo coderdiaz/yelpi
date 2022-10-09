@@ -36,13 +36,14 @@ const StyledSticky = styled('div', {
   position: 'sticky',
   top: 0,
   pt: 32,
-  pb: 32,
+  pb: 28,
   zIndex: 999,
   background: 'linear-gradient($slate100, $slate100 50%, $slate100 75%, transparent)',
 });
 
 const StyledAside = styled('aside', {
   pr: 32,
+  pl: 4,
   borderRight: '1px solid $slate300',
   width: 428,
   overflowY: 'scroll',
