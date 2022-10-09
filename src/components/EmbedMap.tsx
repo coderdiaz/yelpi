@@ -10,7 +10,7 @@ export default function EmbedMap({
   lng
 }: EmbedMapProps) {
   return (
-    <StyledMapWrapper className="w-full h-full relative">
+    <StyledMapWrapper>
       <StyledEmbedMap
         dangerouslySetInnerHTML={{ 
           __html: `<div class="mapouter">
@@ -24,6 +24,8 @@ const StyledMapWrapper = styled('div', {
   position: 'relative',
   width: '100%',
   height: '100%',
+  background: '$slate50',
+  minHeight: 240,
 });
 
 const StyledEmbedMap = styled('div', {
