@@ -28,11 +28,34 @@ export const { styled, getCssText, globalCss, css, keyframes } = createStitches(
       slate700: '#334155',
       slate800: '#1e293b',
       slate900: '#0f172a',
+      // Orange
+      orange50: '#FFF7ED',
+      orange100: '#FFEDD5',
+      orange200: '#FED7AA',
+      orange300: '#FDBA74',
+      orange400: '#FB923C',
+      orange500: '#F97316',
+      orange600: '#EA580C',
+      orange700: '#C2410C',
+      orange800: '#9A3412',
+      orange900: '#7C2D12',
       // Intents
       success: '#54C693',
       warning: '#FFB950',
       danger: '#A04022',
       neutral: '#64748b',
+    },
+    shadows: {
+      ring: `
+          inset 0 0 0 0px #cbd5e1,
+          inset 0 0 0 1px #cbd5e1,
+          0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)
+      `,
+      ringEnabled: `
+          inset 0 0 0 1px #c2410c,
+          0 0 0 3px #FED7AA70,
+          0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      `,
     },
     fonts: {
       sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
