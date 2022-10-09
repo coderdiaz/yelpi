@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { GetServerSideProps } from 'next';
 import { styled } from '@stitches/config';
 import Header from '@components/Header';
@@ -7,6 +8,7 @@ import QuickStart from '@components/blocks/QuickStart';
 import useUi from '@hooks/use-ui';
 import { selectedPlaceSelector } from '@hooks/use-ui/selectors';
 import Business from '@components/blocks/Business';
+import SkeletonBusiness from '@skeletons/SkeletonBusiness';
 
 function IndexPage() {
   const selectedId = useUi(selectedPlaceSelector);
@@ -19,7 +21,9 @@ function IndexPage() {
           <Sidebar />
           <StyledBodySection>
             { selectedId
-                ? <Business />
+                ? <Suspense fallback={<SkeletonBusiness />}>
+                    <Business />
+                  </Suspense>
                 : <QuickStart /> }
           </StyledBodySection>
         </StyledContainer>
