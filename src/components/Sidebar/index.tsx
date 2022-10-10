@@ -20,7 +20,7 @@ export default function Sidebar() {
   return (
     <StyledAside>
       <StyledSticky>
-      <Text
+        <Text
           weight="semibold"
           css={{ color: '$slate700' }}
         >
@@ -38,7 +38,7 @@ const StyledSticky = styled('div', {
   width: 'calc(100% + 5px)',
   pt: 16,
   pb: 20,
-  zIndex: 999,
+  zIndex: 11,
   background: 'linear-gradient($slate100, $slate100 50%, $slate100 75%, transparent)',
   '@md': {
     pt: 32,
