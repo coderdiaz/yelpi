@@ -12,6 +12,7 @@
     "@radix-ui/react-select": "^1.0.0",
     "@stitches/react": "^1.2.8",
     "cookies": "^0.8.0",
+    "framer-motion": "^7.5.3",
     "graphql": "^16.6.0",
     "http-proxy": "^1.18.1",
     "next": "^12.3.0",
