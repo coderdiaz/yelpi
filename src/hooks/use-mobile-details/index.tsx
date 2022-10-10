@@ -3,6 +3,7 @@ import Modal from '@components/Modal';
 import Details from './Details';
 import useUi from '@hooks/use-ui';
 import { setSelectedPlaceSelector } from '@hooks/use-ui/selectors';
+import useMediaQuery from '@hooks/use-media-query';
 
 type MobileDetailsModalProps = {
   showDetailsModal?: boolean;
@@ -24,11 +25,12 @@ function DetailsModalHelper({
 }
 
 export default function useMobileDetails() {
+  const isMobile = useMediaQuery('(max-width: 1023px)');
   const [showDetailsModal, setShowDetailsModal] = useState(false);
   const changeSelectedId = useUi(setSelectedPlaceSelector);
 
   useEffect(() => {
-    if (!showDetailsModal) {
+    if (!showDetailsModal && isMobile) {
       changeSelectedId(null);
     }
   }, [showDetailsModal]);

@@ -20,7 +20,7 @@ export default function PlacesList({
             <Place
               {...item}
               key={idx}
-              onClick={() => handleSelectId(item.id)} />
+              onClick={(e) => handleSelectId(item.id)} />
           )) }
       </StyledPlacesList>
     </StyledPlacesNav>

@@ -1,31 +1,35 @@
 import { Suspense, useEffect } from 'react';
 import type { GetServerSideProps } from 'next';
-import { styled } from '@stitches/config';
+import { breakpoints, styled } from '@stitches/config';
 import Header from '@components/Header';
 import { Container } from '@components/Container';
 import Sidebar from '@components/Sidebar';
 import QuickStart from '@components/blocks/QuickStart';
 import useUi from '@hooks/use-ui';
 import { selectedPlaceSelector } from '@hooks/use-ui/selectors';
-import Business from '@components/blocks/Business';
 import SkeletonBusiness from '@skeletons/SkeletonBusiness';
 import useMobileDetails from '@hooks/use-mobile-details';
+import useMediaQuery from '@hooks/use-media-query';
+import Business from '@components/blocks/Business';
 
 function IndexPage() {
+  const isMobile = useMediaQuery('(max-width: 1023px)');
   const selectedId = useUi(selectedPlaceSelector);
   const { setShowDetailsModal, MobileDetailsModal } = useMobileDetails();
 
   useEffect(() => {
-    if (selectedId) {
-      setShowDetailsModal(true);
-    } else {
-      setShowDetailsModal(false);
-    }
-  }, [selectedId]);
+      if (selectedId) {
+        if (isMobile) {
+          return setShowDetailsModal(true);
+        }
+      } else {
+        return setShowDetailsModal(false);
+      }
+  }, [selectedId, isMobile]);
 
   return (
     <>
-      <MobileDetailsModal />
+      { isMobile ? <MobileDetailsModal /> : null }
       <Header />
       <Main>
         <StyledContainer size="xl">
