@@ -37,7 +37,7 @@ export default function Business() {
                 <Text size="sm" css={{ color: '$white' }}>{data.review_count} reviews</Text>
               </PlaceDetails>
             </Heading>
-            <PhoneNumber href={data.phone}>
+            <PhoneNumber href={`tel:${data.phone}`}>
               <Image src={PhoneIcon} alt="Direction" />
               <Text weight="medium">To Call</Text>
             </PhoneNumber>
