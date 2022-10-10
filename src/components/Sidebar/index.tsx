@@ -48,6 +48,7 @@ const StyledSticky = styled('div', {
 
 const StyledAside = styled('aside', {
   overflowY: 'scroll',
+  overflowX: 'hidden',
   flexShrink: 0,
   display: 'flex',
   flexDirection: 'column',
