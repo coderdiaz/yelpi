@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from 'react';
 import type { GetServerSideProps } from 'next';
-import { breakpoints, styled } from '@stitches/config';
+import { styled } from '@stitches/config';
 import Header from '@components/Header';
 import { Container } from '@components/Container';
 import Sidebar from '@components/Sidebar';
