@@ -52,7 +52,8 @@ yarn dev
 ```
 
 ### Figma
-— The proposal design is available on Figma.
+The proposal design is available on Figma with a minimal screens references (the final version may vary from the current version in the design).
+
 https://www.figma.com/file/R0yeaXPfjhWLOWjmMv6nY7/%F0%9F%AA%B4-Yelpi?node-id=0%3A1
 
 ![Figma Preview](./figma-preview.png)
