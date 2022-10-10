@@ -58,7 +58,7 @@ https://www.figma.com/file/R0yeaXPfjhWLOWjmMv6nY7/%F0%9F%AA%B4-Yelpi?node-id=0%3
 
 ![Figma Preview](./figma-preview.png)
 
-#### LICENSE
+### LICENSE
 This project it's only for educative use, you can contribute to the project reporting an issue or pushing a feature or fix using a pull request.
 
 Designed and coded by Javier Diaz. Never miss a beat. Questions or doubts contact me to hey[at]coderdiaz.dev.
