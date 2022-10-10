@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import type { GetServerSideProps } from 'next';
 import { styled } from '@stitches/config';
 import Header from '@components/Header';
@@ -9,12 +9,23 @@ import useUi from '@hooks/use-ui';
 import { selectedPlaceSelector } from '@hooks/use-ui/selectors';
 import Business from '@components/blocks/Business';
 import SkeletonBusiness from '@skeletons/SkeletonBusiness';
+import useMobileDetails from '@hooks/use-mobile-details';
 
 function IndexPage() {
   const selectedId = useUi(selectedPlaceSelector);
+  const { setShowDetailsModal, MobileDetailsModal } = useMobileDetails();
+
+  useEffect(() => {
+    if (selectedId) {
+      setShowDetailsModal(true);
+    } else {
+      setShowDetailsModal(false);
+    }
+  }, [selectedId]);
 
   return (
     <>
+      <MobileDetailsModal />
       <Header />
       <Main>
         <StyledContainer size="xl">
