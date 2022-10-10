@@ -32,7 +32,7 @@ function IndexPage() {
       { isMobile ? <MobileDetailsModal /> : null }
       <Header />
       <Main>
-        <StyledContainer size="xl">
+        <StyledContainer size="2xl">
           <Sidebar />
           <StyledBodySection>
             { selectedId

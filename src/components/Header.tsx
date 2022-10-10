@@ -7,7 +7,7 @@ import SearchBar from '@components/SearchBar';
 export default function Header() {
   return (
     <StyledHeader>
-      <Container size="xl" css={{
+      <Container size="2xl" css={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
